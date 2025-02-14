@@ -15,7 +15,8 @@ class GigService:
                 "price": result["Price"],
                 "gig_id": result["Gig_ID"],
                 "seller_id": result["Seller_ID"],
-                "duration": result["Duration"]
+                "duration": result["Duration"],
+                "tags": result["Tags"]
             }
 
             # captions = result["@search.captions"]

@@ -1,5 +1,5 @@
 class GigDTO:
-    def __init__(self, gigId, sellerId, title, duration, description, rating, price, score=0):
+    def __init__(self, gigId, sellerId, title, duration, description, rating, price,tags, score=0, ):
         self.gigId = gigId
         self.sellerId = sellerId
         self.title = title
@@ -8,6 +8,7 @@ class GigDTO:
         self.rating = rating
         self.price = price
         self.score = score
+        self.tags = tags
         
 
     def to_dict(self):
@@ -20,7 +21,8 @@ class GigDTO:
             "description": self.description,
             "rating": self.rating,
             "price": self.price,
-            "score": self.score
+            "score": self.score,
+            "tags": self.tags
         }
 
 
@@ -37,7 +39,8 @@ class GigDTO:
             "description": self.description,
             "rating": self.rating,
             "price": self.price,
-            "score": self.score
+            "score": self.score,
+            "tags": self.tags
         }
 
 
@@ -53,4 +56,5 @@ class GigDTO:
             rating = data.get("rating"),
             price = data.get("price"),
             score = data.get("score"),
+            tags = data.get("tags")
         )
