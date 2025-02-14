@@ -2,8 +2,13 @@ from flask import Flask, request, jsonify
 from Services.search_service import SearchService
 from Services.gig_service import GigService
 # from waitress import serve
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 app = Flask(__name__)
+port = int(os.getenv("PORT",10000))
 
 
 @app.route('/search', methods=['POST'])
@@ -23,5 +28,5 @@ def perform_search():
         return jsonify({"message": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=port)
     # serve(app, host='0.0.0.0', port=5000)
