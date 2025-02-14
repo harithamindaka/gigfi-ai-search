@@ -1,0 +1,11 @@
+runtime: python312 
+entrypoint: python app.py
+
+# env_variables:
+#   FLASK_ENV: "production"  # Set to "production" for production mode
+
+instance_class: F1  # Use a predefined instance class (F2 is for small-scale apps)
+
+env_variables:
+  GOOGLE_CLOUD_PROJECT: gigfi-ai-search
+
