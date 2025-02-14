@@ -1,13 +1,14 @@
 from flask import Flask, request, jsonify
 from Services.search_service import SearchService
 from Services.gig_service import GigService
-# from waitress import serve
+from flask_cors import CORS
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
 
 app = Flask(__name__)
+CORS(app)
 port = int(os.getenv("PORT",10000))
 
 
